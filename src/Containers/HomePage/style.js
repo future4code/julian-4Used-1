@@ -19,15 +19,17 @@ export const ProdutosContainer = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
     height: 300px;
+    margin-top: 10px;
 `
 
 export const ProdutoItem = styled.div`
     background-color: purple;
-    @media screen and (max-width: 700px){
+    
+    @media screen and (max-width: 500px){
         width: 100%;
         height: 100%;
     }
-    @media screen and (min-width: 700px){
+    @media screen and (min-width: 500px){
         width: 30%;
     }
 `
