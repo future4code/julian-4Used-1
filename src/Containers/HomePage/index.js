@@ -1,12 +1,15 @@
 import React from 'react'
 import {HomeContainer, HeaderContainer, BannerContainer, ProdutosContainer, ProdutoItem} from './style'
+import Header from '../../components/Header'
 
 class HomePage extends React.Component{
     render(){
         return(
             <HomeContainer>
 
-                <HeaderContainer></HeaderContainer>
+                <HeaderContainer>
+                    <Header tituloTeste="Funcionou"></Header>
+                </HeaderContainer>
 
                 <BannerContainer></BannerContainer>
 
