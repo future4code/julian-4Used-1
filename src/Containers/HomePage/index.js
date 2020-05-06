@@ -4,11 +4,11 @@ import {
   HeaderContainer,
   BannerContainer,
   ProdutosContainer,
-  ProdutoItem,
-  FooterContainer
+  FooterContainer,
 } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import CardProduto from "../../components/CardProduto";
 
 class HomePage extends React.Component {
   render() {
@@ -21,9 +21,12 @@ class HomePage extends React.Component {
         <BannerContainer></BannerContainer>
 
         <ProdutosContainer>
-          <ProdutoItem></ProdutoItem>
-          <ProdutoItem></ProdutoItem>
-          <ProdutoItem></ProdutoItem>
+          <CardProduto />
+          <CardProduto />
+          <CardProduto />
+          <CardProduto />
+          <CardProduto />
+          <CardProduto />
         </ProdutosContainer>
         <FooterContainer>
           <Footer />
