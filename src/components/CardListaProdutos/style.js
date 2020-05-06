@@ -3,22 +3,19 @@ import Paper from "@material-ui/core/Paper";
 
 export const ProdutoItem = styled(Paper)`
   margin-top: 10px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  display: grid;
   @media screen and (max-width: 500px) {
     width: 100%;
     height: 100%;
   }
   @media screen and (min-width: 500px) {
-    width: 27vw;
+    width: 23%;
     height: 20vw;
   }
 `;
 
 export const ItemDetalhes = styled.div`
-  margin: auto;
-  margin-left: 20px;
+    margin: auto;
 `;
 
 export const TextoCardProduto = styled.p`
