@@ -6,6 +6,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 export const ContainerFooter = styled.div`
   height: 10vh;
   background-color: #a5c1ce;
+  width: 100vw;
 `;
 
 export const Facebook = styled(FacebookIcon)`
