@@ -1,16 +1,14 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
+    margin: 0 auto;
+    padding: 0%;
 `
 
 export const HeaderContainer = styled.div`
-    background-color: blue;
-    height: 100px;
 `
 
 export const BannerContainer = styled.div`
-    background-color: green;
-    height: 300px;
 `
 
 
@@ -18,12 +16,13 @@ export const ProdutosContainer = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    height: 300px;
-    margin-top: 10px;
+`
+
+export const FooterContainer = styled.div`
+    
 `
 
 export const ProdutoItem = styled.div`
-    background-color: purple;
     
     @media screen and (max-width: 500px){
         width: 100%;

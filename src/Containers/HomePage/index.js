@@ -5,6 +5,7 @@ import {
   BannerContainer,
   ProdutosContainer,
   ProdutoItem,
+  FooterContainer
 } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -24,7 +25,9 @@ class HomePage extends React.Component {
           <ProdutoItem></ProdutoItem>
           <ProdutoItem></ProdutoItem>
         </ProdutosContainer>
-        <Footer />
+        <FooterContainer>
+          <Footer />
+        </FooterContainer>
       </HomeContainer>
     );
   }
