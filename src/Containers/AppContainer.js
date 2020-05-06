@@ -4,7 +4,7 @@ import Carrinho from './Carrinho'
 import HomePage from './HomePage'
 import ListaDeProdutos from './ListaDeProdutos'
 import Login from './Login'
-import Produto from './Produto'
+import PageProduto from './PageProduto'
 
 export class AppContainer extends Component {
   render() {
@@ -15,7 +15,7 @@ export class AppContainer extends Component {
         <Carrinho></Carrinho>
         <ListaDeProdutos></ListaDeProdutos>
         <Login></Login>
-        <Produto></Produto>
+        <PageProduto></PageProduto>
       </div>
     )
   }
