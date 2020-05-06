@@ -8,4 +8,5 @@ export const ProdutoWrapper = styled.div`
 `
 
 export const TituloProduto = styled(Typography)`
+    
 `
