@@ -8,7 +8,7 @@ import {
   ImagemCard,
 } from "./style";
 
-class CardProduto extends React.Component {
+class CardListaProdutos extends React.Component {
   render() {
     return (
       <ProdutoItem>
@@ -34,4 +34,4 @@ class CardProduto extends React.Component {
   }
 }
 
-export default CardProduto;
+export default CardListaProdutos;
