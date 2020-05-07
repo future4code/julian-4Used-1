@@ -131,9 +131,7 @@ class ListaDeProdutos extends React.Component {
             );
           })}
         </ProdutosContainer>
-        <FooterContainer>
-          <Footer />
-        </FooterContainer>
+        <Footer />
       </ListaProdutosContainer>
     );
   }

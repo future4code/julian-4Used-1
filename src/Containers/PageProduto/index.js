@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  PageProdutoContainer,
-  ProdutoContainer,
-  FooterContainer,
-} from "./style";
+import { PageProdutoContainer, ProdutoContainer } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Produto from "../../components/Produto";
@@ -15,14 +11,10 @@ class PageProduto extends React.Component {
         <Header abreHome={this.props.abreHome} />
 
         <ProdutoContainer>
-          <Produto 
-            produto={this.props.produto}
-          />
+          <Produto produto={this.props.produto} />
         </ProdutoContainer>
 
-        <FooterContainer>
-          <Footer />
-        </FooterContainer>
+        <Footer />
       </PageProdutoContainer>
     );
   }

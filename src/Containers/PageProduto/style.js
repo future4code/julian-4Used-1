@@ -6,7 +6,7 @@ export const PageProdutoContainer = styled.div`
 `;
 
 export const ProdutoContainer = styled.div`
-  height: 500px;
+  height: 80vh;
 `;
 
 export const FooterContainer = styled.div``;
