@@ -18,7 +18,7 @@ export const ProdutoItem = styled(Paper)`
   }
 `;
 
-export const NomeProduto = styled.h2`
+export const NomeProduto = styled(Button)`
   margin: auto;
 `;
 

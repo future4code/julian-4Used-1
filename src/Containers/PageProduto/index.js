@@ -1,30 +1,29 @@
-import React from 'react'
-import {PageProdutoContainer,
-    HeaderContainer,
-    ProdutoContainer,
-    FooterContainer} from './style'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import Produto from '../../components/Produto'
+import React from "react";
+import {
+  PageProdutoContainer,
+  ProdutoContainer,
+  FooterContainer,
+} from "./style";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Produto from "../../components/Produto";
 
-class PageProduto extends React.Component{
-    render(){
-        return(
-            <PageProdutoContainer>
-                <HeaderContainer>
-                    <Header/>
-                </HeaderContainer>
+class PageProduto extends React.Component {
+  render() {
+    return (
+      <PageProdutoContainer>
+        <Header abreHome={this.props.abreHome} />
 
-                <ProdutoContainer>
-                    <Produto></Produto>
-                </ProdutoContainer>
+        <ProdutoContainer>
+          <Produto></Produto>
+        </ProdutoContainer>
 
-                <FooterContainer>
-                    <Footer/>
-                </FooterContainer>
-            </PageProdutoContainer>
-        )
-    }
+        <FooterContainer>
+          <Footer />
+        </FooterContainer>
+      </PageProdutoContainer>
+    );
+  }
 }
 
-export default PageProduto
+export default PageProduto;
