@@ -39,6 +39,7 @@ class HomePage extends React.Component {
     const todosOsProdutos = this.state.produtos.map((produto) => {
       return (
         <CardProduto
+          abreProduto={this.props.abreProduto}
           nomeProduto={produto.name}
           imagemProduto={produto.photos}
           descricaoProduto={produto.description}

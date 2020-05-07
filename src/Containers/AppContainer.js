@@ -26,6 +26,10 @@ export class AppContainer extends Component {
   abreLista = () => {
     this.setState({ paginaExibida: "lista" });
   };
+
+  abreProduto = () => {
+    this.setState({ paginaExibida: "produto" });
+  };
   render() {
     switch (this.state.paginaExibida) {
       case "homepage":
@@ -35,6 +39,7 @@ export class AppContainer extends Component {
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreLista={this.abreLista}
+            abreProduto={this.abreProduto}
           />
         );
 
@@ -51,7 +56,7 @@ export class AppContainer extends Component {
         return <Login abreHome={this.funcaoRetornar} />;
 
       case "produto":
-        return <PageProduto />;
+        return <PageProduto abreHome={this.funcaoRetornar} />;
 
       default:
         return <HomePage />;
