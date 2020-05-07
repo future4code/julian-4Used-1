@@ -11,11 +11,11 @@ class CardProduto extends React.Component {
   render() {
     return (
       <ProdutoItem elevation={20}>
-        <InsigniaPreco badgeContent={this.props.valorProduto} color="secondary">
-          <NomeProduto onClick={this.props.abreProduto}>
-            {this.props.nomeProduto}
+        <InsigniaPreco badgeContent={this.props.produto.price} color="secondary">
+          <NomeProduto onClick={() => this.props.abreProduto(this.props.produto)}>
+            {this.props.produto.name}
           </NomeProduto>
-          <ImagemCard src={this.props.imagemProduto} alt="foto" />
+          <ImagemCard src={this.props.produto.photos} alt="foto" />
         </InsigniaPreco>
         <BotaoComprar color="secondary" variant="contained">
           Comprar

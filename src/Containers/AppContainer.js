@@ -9,6 +9,7 @@ import PageProduto from "./PageProduto";
 export class AppContainer extends Component {
   state = {
     paginaExibida: "homepage",
+    produto: '',
   };
 
   abreCarrinho = () => {
@@ -27,9 +28,10 @@ export class AppContainer extends Component {
     this.setState({ paginaExibida: "lista" });
   };
 
-  abreProduto = () => {
-    this.setState({ paginaExibida: "produto" });
-  };
+  abreProduto = (produto) => {
+    this.setState({ paginaExibida: "produto", produto: produto });
+  }; 
+
   render() {
     switch (this.state.paginaExibida) {
       case "homepage":
@@ -50,13 +52,25 @@ export class AppContainer extends Component {
         return <Carrinho abreHome={this.funcaoRetornar} />;
 
       case "lista":
-        return <ListaDeProdutos abreHome={this.funcaoRetornar} />;
+        return (
+          <ListaDeProdutos 
+            abreCarrinho={this.abreCarrinho}
+            abreHome={this.funcaoRetornar}
+            abreLogin={this.abreLogin}
+            abreProduto={this.abreProduto}
+          />)
+        ;
 
       case "login":
         return <Login abreHome={this.funcaoRetornar} />;
 
       case "produto":
-        return <PageProduto abreHome={this.funcaoRetornar} />;
+        return (
+          <PageProduto 
+            abreHome={this.funcaoRetornar}
+            produto={this.state.produto}
+          />
+        );
 
       default:
         return <HomePage />;

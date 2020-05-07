@@ -126,6 +126,7 @@ class ListaDeProdutos extends React.Component {
               <CardListaProdutos
                 key={produto.id}
                 produto={produto}
+                abreProduto={this.props.abreProduto}
               />
             );
           })}
