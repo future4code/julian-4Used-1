@@ -3,38 +3,21 @@ import Paper from "@material-ui/core/Paper";
 
 export const ProdutoItem = styled(Paper)`
   margin-top: 10px;
-  display: grid;
-  @media screen and (max-width: 500px) {
-    width: 100%;
-    height: 100%;
-  }
-  @media screen and (min-width: 500px) {
-    width: 23%;
-    height: 20vw;
-  }
-`;
-
-export const ItemDetalhes = styled.div`
-    margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const TextoCardProduto = styled.p`
   font-size: 0.7em;
+  align-self: flex-end;
 `;
 
 export const NomeProduto = styled.h2`
   margin: auto;
 `;
 
-export const BoxImagemTexto = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  margin: auto;
-  height: 100%;
-  width: 100%;
-`;
-
 export const ImagemCard = styled.img`
+  width: 100%;
   margin: auto;
 `;

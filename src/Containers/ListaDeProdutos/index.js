@@ -19,7 +19,6 @@ class ListaDeProdutos extends React.Component {
     inputValorMinimo: "",
     inputCategoria: "",
     inputNome: "",
-    inputOrdem: "",
   };
 
   componentDidMount = () => {
@@ -54,21 +53,20 @@ class ListaDeProdutos extends React.Component {
   };
 
   ordenaLista = (event) => {
-    this.setState({ inputOrdem: event.target.value });
     let novaLista = this.state.listaProdutos;
-    if (this.state.inputOrdem === "Nome") {
+    if (event.target.value === "Nome") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
         return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
       });
-    } else if (this.state.inputOrdem === "Categoria") {
+    } else if (event.target.value === "Categoria") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
         return a.category < b.category ? -1 : a.category > b.category ? 1 : 0;
       });
-    } else if (this.state.inputOrdem === "Menor preço") {
+    } else if (event.target.value === "Menor Preço") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
         return a.price < b.price ? -1 : a.price > b.price ? 1 : 0;
       });
-    } else if (this.state.inputOrdem === "Maior preço") {
+    } else if (event.target.value === "Maior Preço") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
         return a.price > b.price ? -1 : a.price < b.price ? 1 : 0;
       });
@@ -117,7 +115,6 @@ class ListaDeProdutos extends React.Component {
             inputMinimo={this.state.inputValorMinimo}
             inputCategoria={this.state.inputCategoria}
             inputNome={this.state.inputNome}
-            inputOrdem={this.state.inputOrdem}
             onChangeFiltro={this.handleChange}
             onChangeOrdem={this.ordenaLista}
             onClickLimpa={this.limpaFiltros}
@@ -127,12 +124,8 @@ class ListaDeProdutos extends React.Component {
           {listaFiltrada.map((produto) => {
             return (
               <CardListaProdutos
-                nomeProduto={produto.name}
-                imagemProduto={produto.photos}
-                descricaoProduto={produto.description}
-                categoriaProduto={produto.category}
-                parcelaProduto={produto.installments}
                 key={produto.id}
+                produto={produto}
               />
             );
           })}
