@@ -45,6 +45,7 @@ class Filtro extends React.Component {
               <SelectContainer
                 value={this.props.inputCategoria}
                 onChange={this.props.onChangeFiltro('inputCategoria')}
+                autoWidth
               ></SelectContainer>
             </FormControle>
             <FormControle>
@@ -58,8 +59,8 @@ class Filtro extends React.Component {
           <SortContainer>
             <FormControle>
               <SelectContainer
-                value={this.props.inputOrdem}
                 onChange={this.props.onChangeOrdem}
+                autoWidth
               >
                 <Option value={'Nome'}>Nome</Option>
                 <Option value={'Categoria'}>Categoria</Option>
