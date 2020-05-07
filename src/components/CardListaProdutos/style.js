@@ -6,6 +6,7 @@ export const ProdutoItem = styled(Paper)`
   width: 100%;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 `;
 
 export const TextoCardProduto = styled.p`

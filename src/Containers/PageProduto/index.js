@@ -15,7 +15,9 @@ class PageProduto extends React.Component {
         <Header abreHome={this.props.abreHome} />
 
         <ProdutoContainer>
-          <Produto></Produto>
+          <Produto 
+            produto={this.props.produto}
+          />
         </ProdutoContainer>
 
         <FooterContainer>
