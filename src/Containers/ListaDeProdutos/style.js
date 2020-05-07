@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const ListaProdutosContainer = styled.div``
 
 export const HeaderContainer = styled.div`
-    background-color: blue;
-    height: 100px;
 `
 export const BarraFiltroContainer = styled.div`
     height: 50px;
@@ -18,3 +16,4 @@ export const ProdutosContainer = styled.div`
     flex-wrap: wrap;
     margin-top: 10px;
 `
+export const FooterContainer = styled.div``
