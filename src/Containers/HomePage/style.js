@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "@material-ui/core/Button";
 
 export const HomeContainer = styled.div`
   margin: 0 auto;
@@ -16,3 +17,11 @@ export const ProdutosContainer = styled.div`
 `;
 
 export const FooterContainer = styled.div``;
+
+export const ContainerVejaMais = styled.div`
+  height: 8vh;
+  display: flex;
+  flex-flow: row-reverse wrap;
+`;
+
+export const BotaoVejaMais = styled(Button)``;

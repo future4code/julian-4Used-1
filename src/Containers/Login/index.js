@@ -1,28 +1,25 @@
-import React from 'react';
-import {
-    LoginContainer,
-    HeaderContainer,
-    FormContainer
-} from './style';
+import React from "react";
+import { LoginContainer, FormContainer, FormBox, BotaoEntrar } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import TextField from "@material-ui/core/TextField";
 
-class Login extends React.Component{
-    render(){
-        return(
-            <LoginContainer>
-                <HeaderContainer />
-                <FormContainer>
-                    <TextField label='Nome do usuário' />
-                    <TextField label='Password' type='password' />
-                    <Button>Entrar</Button>
-                </FormContainer>
-                <Footer />
-            </LoginContainer>
-        )
-    }
+class Login extends React.Component {
+  render() {
+    return (
+      <LoginContainer>
+        <Header abreHome={this.props.abreHome} />
+        <FormContainer>
+          <FormBox elevation={20}>
+            <TextField label="Nome do usuário" />
+            <TextField label="Password" type="password" />
+            <BotaoEntrar>Entrar</BotaoEntrar>
+          </FormBox>
+        </FormContainer>
+        <Footer />
+      </LoginContainer>
+    );
+  }
 }
 
-export default Login
+export default Login;

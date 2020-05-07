@@ -13,12 +13,12 @@ class Carrinho extends React.Component {
   render() {
     return (
       <CorpoCarrinho>
-        <Header />
+        <Header abreHome={this.props.abreHome} />
         <ContainerCarrinho>
           <CardCarrinho />
           <CardCarrinho />
           <ContainerBottom>
-            <BotaoFinalizar>Finalizar Compra</BotaoFinalizar>
+            <BotaoFinalizar color="secondary">Finalizar Compra</BotaoFinalizar>
           </ContainerBottom>
         </ContainerCarrinho>
 

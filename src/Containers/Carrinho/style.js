@@ -6,14 +6,22 @@ export const CorpoCarrinho = styled.div`
   flex-flow: column wrap;
   background-color: #787f82;
   align-items: center;
+  @media screen and (max-width: 500px) {
+    background-color: #004275;
+  }
 `;
 
 export const ContainerCarrinho = styled.div`
-  display: flex;
-  flex-flow: column wrap;
-  height: 70vh;
-  background-color: #004275;
-  width: 60vw;
+  @media screen and (min-width: 500px) {
+    display: flex;
+    flex-flow: column wrap;
+    height: 80vh;
+    background-color: #004275;
+    width: 60vw;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100vw;
+  }
 `;
 
 export const ContainerBottom = styled.div`
@@ -23,8 +31,9 @@ export const ContainerBottom = styled.div`
 
 export const BotaoFinalizar = styled(Fab)`
   width: 10vw;
-  border-radius: 10%;
-  background-color: #fcd0a7;
-  color: #004275;
+  border-radius: 20px;
   margin-right: 5vw;
+  @media screen and (max-width: 500px) {
+    width: 50vw;
+  }
 `;
