@@ -45,7 +45,7 @@ export class AppContainer extends Component {
         return <Carrinho abreHome={this.funcaoRetornar} />;
 
       case "lista":
-        return <ListaDeProdutos />;
+        return <ListaDeProdutos abreHome={this.funcaoRetornar} />;
 
       case "login":
         return <Login abreHome={this.funcaoRetornar} />;
