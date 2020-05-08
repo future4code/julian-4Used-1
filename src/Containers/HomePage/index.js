@@ -35,6 +35,7 @@ class HomePage extends React.Component {
         window.alert(error);
       });
   };
+
   render() {
     const todosOsProdutos = this.state.produtos.map((produto) => {
       return (
@@ -42,6 +43,7 @@ class HomePage extends React.Component {
           key={produto.id}
           produto={produto}
           abreProduto={this.props.abreProduto}
+          adicionarProduto={this.props.adicionarProduto}
         />
       );
     });
