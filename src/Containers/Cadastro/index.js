@@ -6,8 +6,6 @@ import {
   ImagemContainer,
   CadastroProdutoFoto,
   BotaoCadastrar,
-  BotaoUpload,
-  BoxFoto,
 } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
