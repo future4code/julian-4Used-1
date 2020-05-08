@@ -10,6 +10,7 @@ export class AppContainer extends Component {
   state = {
     paginaExibida: "homepage",
     produto: '',
+    carrinho: []
   };
 
   abreCarrinho = () => {
@@ -32,6 +33,15 @@ export class AppContainer extends Component {
     this.setState({ paginaExibida: "produto", produto: produto });
   }; 
 
+  adicionarProduto = (produto) => {
+
+    const novaListaCarrinho = [...this.state.carrinho, produto]
+
+    this.setState({
+      carrinho: novaListaCarrinho
+    })
+  }
+
   render() {
     switch (this.state.paginaExibida) {
       case "homepage":
@@ -42,6 +52,7 @@ export class AppContainer extends Component {
             abreLogin={this.abreLogin}
             abreLista={this.abreLista}
             abreProduto={this.abreProduto}
+            adicionarProduto={this.adicionarProduto}
           />
         );
 
@@ -49,7 +60,8 @@ export class AppContainer extends Component {
         return <Cadastro />;
 
       case "carrinho":
-        return <Carrinho abreHome={this.funcaoRetornar} />;
+        return <Carrinho abreHome={this.funcaoRetornar} 
+                          produtoCarrinho={this.state.carrinho}/>;
 
       case "lista":
         return (
