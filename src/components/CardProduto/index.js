@@ -23,7 +23,7 @@ class CardProduto extends React.Component {
           </NomeProduto>
           <ImagemCard src={this.props.produto.photos} alt="foto" />
         </InsigniaPreco>
-        <BotaoComprar color="secondary" variant="contained">
+        <BotaoComprar color="secondary" variant="contained" onClick={() => this.props.adicionarProduto(this.props.produto)}>
           Comprar
         </BotaoComprar>
       </ProdutoItem>

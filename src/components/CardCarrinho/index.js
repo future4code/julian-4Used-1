@@ -13,13 +13,13 @@ class CardCarrinho extends React.Component {
   render() {
     return (
       <CardContainer elevation={20}>
-        <img src="https://picsum.photos/200/200" alt="foto" />
+        <img src={this.props.produtoCarrinho.photos} alt="foto" />
         <ContainerDetalhes>
           <DetalhesEsquerda>
-            <p>Nome do produto</p>
-            <p>Descrição da compra</p>
-            <p>Valor: R$ 100,00</p>
-            <p>Forma de pagamento: Transferência</p>
+            <p>{this.props.produtoCarrinho.name}</p>
+            <p>{this.props.produtoCarrinho.description}</p>
+            <p>Valor: R$ {this.props.produtoCarrinho.price}</p>
+            <p>Forma de pagamento: {this.props.produtoCarrinho.paymentMethod}</p>
           </DetalhesEsquerda>
           <DetalhesDireita>
             <p>Quantidade: 15</p>
