@@ -32,6 +32,10 @@ export class AppContainer extends Component {
     this.setState({ paginaExibida: "produto", produto: produto });
   };
 
+  abreAnunciar = () => {
+    this.setState({ paginaExibida: "cadastro" });
+  };
+
   render() {
     switch (this.state.paginaExibida) {
       case "homepage":
@@ -42,15 +46,27 @@ export class AppContainer extends Component {
             abreLogin={this.abreLogin}
             abreLista={this.abreLista}
             abreProduto={this.abreProduto}
+            abreAnunciar={this.abreAnunciar}
           />
         );
 
       case "cadastro":
-        return <Cadastro abreLogin={this.abreLogin} />;
+        return (
+          <Cadastro
+            abreCarrinho={this.abreCarrinho}
+            abreHome={this.funcaoRetornar}
+            abreLogin={this.abreLogin}
+            abreProduto={this.abreProduto}
+          />
+        );
 
       case "carrinho":
         return (
-          <Carrinho abreHome={this.funcaoRetornar} abreLogin={this.abreLogin} />
+          <Carrinho
+            abreHome={this.funcaoRetornar}
+            abreLogin={this.abreLogin}
+            abreAnunciar={this.abreAnunciar}
+          />
         );
 
       case "lista":
@@ -64,7 +80,12 @@ export class AppContainer extends Component {
         );
 
       case "login":
-        return <Login abreHome={this.funcaoRetornar} />;
+        return (
+          <Login
+            abreHome={this.funcaoRetornar}
+            abreAnunciar={this.abreAnunciar}
+          />
+        );
 
       case "produto":
         return (

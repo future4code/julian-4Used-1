@@ -17,6 +17,7 @@ class Carrinho extends React.Component {
           abreHome={this.props.abreHome}
           abreLogin={this.props.abreLogin}
           abreCarrinho={this.abreCarrinho}
+          abreAnunciar={this.props.abreAnunciar}
         />
         <ContainerCarrinho>
           <CardCarrinho />

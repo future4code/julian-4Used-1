@@ -7,6 +7,7 @@ import {
   BotaoRetornar,
   LoginIcone,
   ContainerIcones,
+  BotaoAnunciar,
 } from "./style";
 
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
@@ -32,11 +33,17 @@ class Header extends React.Component {
             />
           </FormControl>
         </BuscaInputContainer>
+        <BotaoAnunciar
+          color="secondary"
+          variant="contained"
+          onClick={this.props.abreAnunciar}
+        >
+          Anuncie!
+        </BotaoAnunciar>
         <IconesContainer>
           <ContainerIcones color="primary" aria-label="Add">
             <LoginIcone onClick={this.props.abreLogin} />
           </ContainerIcones>
-
           <IconButton onClick={this.props.abreCarrinho}>
             <ContainerIcones color="primary">
               <Badge badgeContent={1}>

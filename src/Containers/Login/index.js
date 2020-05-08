@@ -8,7 +8,10 @@ class Login extends React.Component {
   render() {
     return (
       <LoginContainer>
-        <Header abreHome={this.props.abreHome} />
+        <Header
+          abreHome={this.props.abreHome}
+          abreAnunciar={this.props.abreAnunciar}
+        />
         <FormContainer>
           <FormBox elevation={20}>
             <TextField label="Nome do usuário" />
