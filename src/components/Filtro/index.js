@@ -44,7 +44,11 @@ class Filtro extends React.Component {
               <SelectContainer
                 value={this.props.inputCategoria}
                 onChange={this.props.onChangeFiltro("inputCategoria")}
-              ></SelectContainer>
+              >
+                {this.props.categorias.map(categoria => {
+                  return <Option value={categoria}>{categoria}</Option>
+                })}
+              </SelectContainer>
             </FormControle>
             <FormControle>
               <Botao onClick={this.props.onClickLimpa}>Limpar Filtros</Botao>

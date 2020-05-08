@@ -122,6 +122,7 @@ class ListaDeProdutos extends React.Component {
             inputCategoria={this.state.inputCategoria}
             inputNome={this.state.inputNome}
             inputOrdem={this.state.inputOrdem}
+            categorias={this.props.categorias}
             onChangeFiltro={this.handleChange}
             onChangeOrdem={this.ordenaLista}
             onClickLimpa={this.limpaFiltros}
