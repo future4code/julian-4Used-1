@@ -10,8 +10,17 @@ export class AppContainer extends Component {
   state = {
     paginaExibida: "homepage",
     produto: "",
-    carrinho: []
-
+    carrinho: [],
+    categorias: [
+      'Decoração',
+      'Vestuário',
+      'Eletrônicos',
+      'Mobília',
+      'Utilitários',
+      'Cozinha',
+      'Instrumentos Musicais',
+      'Outros'
+    ]
   };
 
   abreCarrinho = () => {
@@ -104,6 +113,7 @@ export class AppContainer extends Component {
       case "cadastro":
         return (
           <Cadastro
+            categorias={this.state.categorias}
             abreCarrinho={this.abreCarrinho}
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
@@ -129,6 +139,7 @@ export class AppContainer extends Component {
       case "lista":
         return (
           <ListaDeProdutos
+            categorias={this.state.categorias}
             abreCarrinho={this.abreCarrinho}
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}

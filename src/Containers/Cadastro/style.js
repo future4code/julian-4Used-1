@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Upload from "@material-ui/icons/Publish";
+import TextField from "@material-ui/core/TextField";
+import Select from "@material-ui/core/Select";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
 
 export const CadastroContainer = styled.div``;
 
@@ -40,3 +45,17 @@ export const BotaoUpload = styled(Upload)`
 export const BoxFoto = styled.div`
   display: flex;
 `;
+
+export const InputContainer = styled(TextField)`
+  width: 200px;
+`
+
+export const SelectContainer = styled(Select)`
+  width: 200px;
+`
+
+export const FormControle = styled(FormControl)``
+
+export const SelectLabel = styled(InputLabel)``
+
+export const Option = styled(MenuItem)``
