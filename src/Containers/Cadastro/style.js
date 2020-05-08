@@ -26,7 +26,6 @@ export const CadastroBodyContainer = styled.div`
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  height: 80vh;
 `;
 
 export const BotaoCadastrar = styled(Button)`

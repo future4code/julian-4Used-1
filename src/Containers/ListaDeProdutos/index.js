@@ -18,6 +18,7 @@ class ListaDeProdutos extends React.Component {
     inputValorMinimo: "",
     inputCategoria: "",
     inputNome: "",
+    inputOrdem: '',
   };
 
   componentDidMount = () => {
@@ -52,6 +53,7 @@ class ListaDeProdutos extends React.Component {
   };
 
   ordenaLista = (event) => {
+    this.setState({ inputOrdem: event.target.value })
     let novaLista = this.state.listaProdutos;
     if (event.target.value === "Nome") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
@@ -63,11 +65,11 @@ class ListaDeProdutos extends React.Component {
       });
     } else if (event.target.value === "Menor Preço") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
-        return a.price < b.price ? -1 : a.price > b.price ? 1 : 0;
+        return Number(a.price) < Number(b.price) ? -1 : Number(a.price) > Number(b.price) ? 1 : 0;
       });
     } else if (event.target.value === "Maior Preço") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
-        return a.price > b.price ? -1 : a.price < b.price ? 1 : 0;
+        return Number(a.price) > Number(b.price) ? -1 : Number(a.price) < Number(b.price) ? 1 : 0;
       });
     }
     this.setState({ listaProdutos: novaLista });
@@ -77,12 +79,12 @@ class ListaDeProdutos extends React.Component {
     let listaFiltrada = this.state.listaProdutos;
     if (this.state.inputValorMinimo !== "") {
       listaFiltrada = listaFiltrada.filter((produto) => {
-        return produto.price >= this.state.inputValorMinimo;
+        return Number(produto.price) >= Number(this.state.inputValorMinimo);
       });
     }
     if (this.state.inputValorMaximo !== "") {
       listaFiltrada = listaFiltrada.filter((produto) => {
-        return produto.price <= this.state.inputValorMaximo;
+        return Number(produto.price) <= Number(this.state.inputValorMaximo);
       });
     }
     if (this.state.inputCategoria !== "") {
@@ -110,6 +112,7 @@ class ListaDeProdutos extends React.Component {
             abreHome={this.props.abreHome}
             abreCarrinho={this.props.abreCarrinho}
             abreLogin={this.props.abreLogin}
+            abreAnunciar={this.props.abreAnunciar}
           />
         </HeaderContainer>
         <BarraFiltroContainer>
@@ -118,6 +121,7 @@ class ListaDeProdutos extends React.Component {
             inputMinimo={this.state.inputValorMinimo}
             inputCategoria={this.state.inputCategoria}
             inputNome={this.state.inputNome}
+            inputOrdem={this.state.inputOrdem}
             onChangeFiltro={this.handleChange}
             onChangeOrdem={this.ordenaLista}
             onClickLimpa={this.limpaFiltros}

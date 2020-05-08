@@ -101,6 +101,7 @@ class Cadastro extends React.Component {
           abreCarrinho={this.props.abreCarrinho}
           abreHome={this.props.abreHome}
           abreLogin={this.props.abreLogin}
+          abreAnunciar={this.props.abreAnunciar}
         />
         <CadastroBodyContainer>
           <FormContainer>
