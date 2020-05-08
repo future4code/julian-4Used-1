@@ -6,8 +6,6 @@ import {
   ImagemContainer,
   CadastroProdutoFoto,
   BotaoCadastrar,
-  BotaoUpload,
-  BoxFoto,
 } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -16,7 +14,8 @@ import axios from "axios";
 
 class Cadastro extends React.Component {
   state = {
-    urlDaFoto: "",
+    urlDaFoto:
+      "https://enquadrarte.com.br/wp-content/uploads/2019/03/quadro-personalizado-vertical.jpg",
     inputNome: "",
     inputDescricao: "",
     inputPreco: "",
@@ -26,9 +25,9 @@ class Cadastro extends React.Component {
     inputParcelas: "",
   };
 
-  funcaoExibeFoto = (event) => {
-    this.setState({ urlDaFoto: event.target.value });
-  };
+  // funcaoExibeFoto = (event) => {
+  //   this.setState({ urlDaFoto: event.target.value });
+  // };
 
   onChangeInputName = (event) => {
     this.setState({ inputNome: event.target.value });
@@ -52,6 +51,7 @@ class Cadastro extends React.Component {
 
   onChangeInputFoto = (event) => {
     this.setState({ inputFoto: event.target.value });
+    this.setState({ urlDaFoto: event.target.value });
   };
 
   onChangeInputParcelas = (event) => {
@@ -81,7 +81,8 @@ class Cadastro extends React.Component {
       })
       .then(
         this.setState({
-          urlDaFoto: "",
+          urlDaFoto:
+            "https://enquadrarte.com.br/wp-content/uploads/2019/03/quadro-personalizado-vertical.jpg",
           inputPreco: "",
           inputParcelas: "",
           inputPagamento: "",
@@ -90,16 +91,17 @@ class Cadastro extends React.Component {
           inputFoto: "",
           inputNome: "",
         })
-      );
+      )
+      .then(window.alert("Produto cadastrado!"));
   };
   render() {
-    console.log(this.state.inputFoto);
     return (
       <CadastroContainer>
         <Header
           abreCarrinho={this.props.abreCarrinho}
           abreHome={this.props.abreHome}
           abreLogin={this.props.abreLogin}
+          abreAnunciar={this.props.abreAnunciar}
         />
         <CadastroBodyContainer>
           <FormContainer>

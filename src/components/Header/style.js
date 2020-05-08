@@ -60,7 +60,5 @@ export const ContainerIcones = styled(Fab)`
 `;
 
 export const BotaoAnunciar = styled(Button)`
-  height: 6vh;
-  width: 15vh;
   margin: auto;
 `;

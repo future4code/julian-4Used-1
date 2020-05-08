@@ -108,18 +108,21 @@ export class AppContainer extends Component {
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreProduto={this.abreProduto}
+            abreAnunciar={this.abreAnunciar}
           />
         );
 
       case "carrinho":
         return (
-          <Carrinho
+          <Carrinho 
+            produtoCarrinho={this.state.carrinho}
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreAnunciar={this.abreAnunciar}
             produtoCarrinho={this.state.carrinho}
             adicionarQtd={this.adicionarQtd}
             diminuirQtd={this.diminuirQtd}
+
           />
         );
 
@@ -130,6 +133,7 @@ export class AppContainer extends Component {
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreProduto={this.abreProduto}
+            abreAnunciar={this.abreAnunciar}
           />
         );
 
@@ -138,16 +142,19 @@ export class AppContainer extends Component {
           <Login
             abreHome={this.funcaoRetornar}
             abreAnunciar={this.abreAnunciar}
+            abreLogin={this.abreLogin}
+            abreCarrinho={this.abreCarrinho}
           />
         );
 
       case "produto":
         return (
           <PageProduto
-            abreHome={this.funcaoRetornar}
             produto={this.state.produto}
+            abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreCarrinho={this.abreCarrinho}
+            abreAnunciar={this.abreAnunciar}
           />
         );
 
