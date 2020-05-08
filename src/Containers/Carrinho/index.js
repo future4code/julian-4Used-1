@@ -20,8 +20,10 @@ class Carrinho extends React.Component {
           abreAnunciar={this.props.abreAnunciar}
         />
         <ContainerCarrinho>
-          <CardCarrinho />
-          <CardCarrinho />
+          {this.props.produtoCarrinho.map((produto) => {
+            return <CardCarrinho produtoCarrinho={produto}/>
+          })}
+          
           <ContainerBottom>
             <BotaoFinalizar color="secondary">Finalizar Compra</BotaoFinalizar>
           </ContainerBottom>
