@@ -4,6 +4,7 @@ import {
   ContainerCarrinho,
   BotaoFinalizar,
   ContainerBottom,
+  CarrinhoWrapper
 } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -21,11 +22,15 @@ class Carrinho extends React.Component {
         />
         <ContainerCarrinho>
           {this.props.produtoCarrinho.map((produto) => {
-            return <CardCarrinho produtoCarrinho={produto}/>
+            return <CarrinhoWrapper>
+                    <CardCarrinho produtoCarrinho={produto} 
+                    adicionarQtd={() => this.props.adicionarQtd(produto.id, produto.qtd)}
+                    diminuirQtd = {() => this.props.diminuirQtd(produto.id, produto.qtd)}/>
+                  </CarrinhoWrapper>
           })}
           
           <ContainerBottom>
-            <BotaoFinalizar color="secondary">Finalizar Compra</BotaoFinalizar>
+            <BotaoFinalizar color="secondary" variant="contained">Finalizar Compra</BotaoFinalizar>
           </ContainerBottom>
         </ContainerCarrinho>
 

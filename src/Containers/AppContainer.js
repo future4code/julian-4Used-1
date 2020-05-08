@@ -40,10 +40,48 @@ export class AppContainer extends Component {
 
   adicionarProduto = (produto) => {
 
+    produto.qtd = 1;
+
     const novaListaCarrinho = [...this.state.carrinho, produto]
 
     this.setState({
       carrinho: novaListaCarrinho
+    })
+  }
+
+  adicionarQtd = (id) => {
+    const novaListaDeProdutos = this.state.carrinho.map((produto) => {
+      if (id === produto.id && produto.qtd >= 1){
+        const alteracao = {
+          ...produto,
+          qtd: produto.qtd + 1
+        }
+        return alteracao
+      }else{
+        return produto;
+      }
+    })
+
+    this.setState({
+      carrinho: novaListaDeProdutos
+    })
+  }
+
+  diminuirQtd = (id) => {
+    const novaListaDeProdutos = this.state.carrinho.map((produto) => {
+      if (id === produto.id && produto.qtd > 1){
+        const alteracao = {
+          ...produto,
+          qtd: produto.qtd - 1
+        }
+        return alteracao
+      }else{
+        return produto;
+      }
+    })
+
+    this.setState({
+      carrinho: novaListaDeProdutos
     })
   }
 
@@ -80,6 +118,8 @@ export class AppContainer extends Component {
             abreLogin={this.abreLogin}
             abreAnunciar={this.abreAnunciar}
             produtoCarrinho={this.state.carrinho}
+            adicionarQtd={this.adicionarQtd}
+            diminuirQtd={this.diminuirQtd}
           />
         );
 
