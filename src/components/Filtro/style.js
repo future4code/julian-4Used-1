@@ -6,51 +6,46 @@ import {
   Select,
   MenuItem,
   Button,
+  OutlinedInput
 } from "@material-ui/core";
 
 export const BarraFiltroContainer = styled.div`
   width: 90%;
   margin: 0 auto;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
 `;
 
 export const FiltroContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: auto;
 `;
 
 export const FormContainer = styled.div`
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
-  margin-top: 40px;
 `;
 
-export const FormControle = styled(FormControl)``;
+export const FormControle = styled(FormControl)`
+  padding: .5em 0;
+`;
 
-export const InputContainer = styled(TextField)``;
+export const InputContainer = styled(TextField)`
+  margin-right: 1em;
+`;
 
 export const LabelSelect = styled(InputLabel)``;
 
 export const SelectContainer = styled(Select)`
-  margin-top: 18px;
-  width: 100px;
+  width: 150px;
 `;
 
 export const Option = styled(MenuItem)``;
 
 export const Botao = styled(Button)`
-  margin: auto;
-  height: 80px;
-  @media screen and (max-width: 500px) {
-    margin-top: 10px;
-    height: 40px;
-  }
+  margin: 1em;
 `;
 
 export const SortContainer = styled.div`
-  margin-top: 38px;
 `;

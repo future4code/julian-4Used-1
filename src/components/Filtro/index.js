@@ -44,13 +44,18 @@ class Filtro extends React.Component {
               <SelectContainer
                 value={this.props.inputCategoria}
                 onChange={this.props.onChangeFiltro("inputCategoria")}
-                autoWidth
               ></SelectContainer>
+            </FormControle>
+            <FormControle>
+              <Botao onClick={this.props.onClickLimpa}>Limpar Filtros</Botao>
             </FormControle>
           </FormContainer>
           <SortContainer>
             <FormControle>
-              <SelectContainer onChange={this.props.onChangeOrdem} autoWidth>
+              <SelectContainer 
+                value={this.props.inputOrdem}
+                onChange={this.props.onChangeOrdem}
+              >
                 <Option value={"Nome"}>Nome</Option>
                 <Option value={"Categoria"}>Categoria</Option>
                 <Option value={"Menor Preço"}>Menor preço</Option>
@@ -59,7 +64,6 @@ class Filtro extends React.Component {
             </FormControle>
           </SortContainer>
         </FiltroContainer>
-        <Botao onClick={this.props.onClickLimpa}>Limpar Filtros</Botao>
       </BarraFiltroContainer>
     );
   }
