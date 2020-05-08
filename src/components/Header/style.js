@@ -3,6 +3,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Input from "@material-ui/core/Input";
 import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
 import Fab from "@material-ui/core/Fab";
+import Button from "@material-ui/core/Button";
 
 export const InputBusca = styled(Input)`
   background-color: #a5c1ce;
@@ -22,7 +23,7 @@ export const HeaderFlex = styled.div`
   display: grid;
   background-color: #a5c1ce;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 0.5fr;
+  grid-template-columns: 1fr 1fr 0.5fr 0.5fr;
   width: 100vw;
   margin-left: 0;
   justify-content: space-between;
@@ -55,5 +56,11 @@ export const BotaoRetornar = styled.button`
 export const LoginIcone = styled(PersonOutlineOutlinedIcon)``;
 
 export const ContainerIcones = styled(Fab)`
+  margin: auto;
+`;
+
+export const BotaoAnunciar = styled(Button)`
+  height: 6vh;
+  width: 15vh;
   margin: auto;
 `;

@@ -61,11 +61,9 @@ class HomePage extends React.Component {
             abreCarrinho={this.props.abreCarrinho}
             funcaoRetornar={this.props.abreHome}
             abreLogin={this.props.abreLogin}
+            abreAnunciar={this.props.abreAnunciar}
           ></Header>
         </HeaderContainer>
-
-        <BannerContainer></BannerContainer>
-
         <ContainerVejaMais>
           <BotaoVejaMais color="primary" onClick={this.props.abreLista}>
             Veja mais

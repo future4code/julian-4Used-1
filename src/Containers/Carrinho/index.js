@@ -13,7 +13,12 @@ class Carrinho extends React.Component {
   render() {
     return (
       <CorpoCarrinho>
-        <Header abreHome={this.props.abreHome} />
+        <Header
+          abreHome={this.props.abreHome}
+          abreLogin={this.props.abreLogin}
+          abreCarrinho={this.abreCarrinho}
+          abreAnunciar={this.props.abreAnunciar}
+        />
         <ContainerCarrinho>
           {this.props.produtoCarrinho.map((produto) => {
             return <CardCarrinho produtoCarrinho={produto}/>

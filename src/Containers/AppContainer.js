@@ -9,8 +9,9 @@ import PageProduto from "./PageProduto";
 export class AppContainer extends Component {
   state = {
     paginaExibida: "homepage",
-    produto: '',
+    produto: "",
     carrinho: []
+
   };
 
   abreCarrinho = () => {
@@ -31,7 +32,11 @@ export class AppContainer extends Component {
 
   abreProduto = (produto) => {
     this.setState({ paginaExibida: "produto", produto: produto });
-  }; 
+  };
+
+  abreAnunciar = () => {
+    this.setState({ paginaExibida: "cadastro" });
+  };
 
   adicionarProduto = (produto) => {
 
@@ -52,35 +57,57 @@ export class AppContainer extends Component {
             abreLogin={this.abreLogin}
             abreLista={this.abreLista}
             abreProduto={this.abreProduto}
+            abreAnunciar={this.abreAnunciar}
             adicionarProduto={this.adicionarProduto}
+
           />
         );
 
       case "cadastro":
-        return <Cadastro />;
-
-      case "carrinho":
-        return <Carrinho abreHome={this.funcaoRetornar} 
-                          produtoCarrinho={this.state.carrinho}/>;
-
-      case "lista":
         return (
-          <ListaDeProdutos 
+          <Cadastro
             abreCarrinho={this.abreCarrinho}
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreProduto={this.abreProduto}
-          />)
-        ;
+          />
+        );
+
+      case "carrinho":
+        return (
+          <Carrinho
+            abreHome={this.funcaoRetornar}
+            abreLogin={this.abreLogin}
+            abreAnunciar={this.abreAnunciar}
+            produtoCarrinho={this.state.carrinho}
+          />
+        );
+
+      case "lista":
+        return (
+          <ListaDeProdutos
+            abreCarrinho={this.abreCarrinho}
+            abreHome={this.funcaoRetornar}
+            abreLogin={this.abreLogin}
+            abreProduto={this.abreProduto}
+          />
+        );
 
       case "login":
-        return <Login abreHome={this.funcaoRetornar} />;
+        return (
+          <Login
+            abreHome={this.funcaoRetornar}
+            abreAnunciar={this.abreAnunciar}
+          />
+        );
 
       case "produto":
         return (
-          <PageProduto 
+          <PageProduto
             abreHome={this.funcaoRetornar}
             produto={this.state.produto}
+            abreLogin={this.abreLogin}
+            abreCarrinho={this.abreCarrinho}
           />
         );
 
