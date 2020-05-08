@@ -12,7 +12,7 @@ import {} from "./style";
 class CardCarrinho extends React.Component {
   render() {
     return (
-      <CardContainer>
+      <CardContainer elevation={20}>
         <img src="https://picsum.photos/200/200" alt="foto" />
         <ContainerDetalhes>
           <DetalhesEsquerda>

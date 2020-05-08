@@ -11,8 +11,14 @@ class CardProduto extends React.Component {
   render() {
     return (
       <ProdutoItem elevation={20}>
-        <InsigniaPreco badgeContent={this.props.produto.price} color="secondary">
-          <NomeProduto onClick={() => this.props.abreProduto(this.props.produto)}>
+        <InsigniaPreco
+          badgeContent={this.props.produto.price}
+          color="secondary"
+          max={999}
+        >
+          <NomeProduto
+            onClick={() => this.props.abreProduto(this.props.produto)}
+          >
             {this.props.produto.name}
           </NomeProduto>
           <ImagemCard src={this.props.produto.photos} alt="foto" />

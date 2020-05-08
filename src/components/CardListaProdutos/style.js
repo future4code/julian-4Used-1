@@ -19,6 +19,6 @@ export const NomeProduto = styled.h2`
 `;
 
 export const ImagemCard = styled.img`
-  width: 100%;
+  width: 150px;
   margin: auto;
 `;

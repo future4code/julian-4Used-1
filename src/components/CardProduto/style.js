@@ -24,8 +24,8 @@ export const NomeProduto = styled(Button)`
 
 export const ImagemCard = styled.img`
   margin: auto;
-  height: 100%;
-  width: 50%;
+  height: 180px;
+  width: 180px;
 `;
 
 export const InsigniaPreco = styled(Badge)`

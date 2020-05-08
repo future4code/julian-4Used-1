@@ -8,6 +8,7 @@ export const CorpoCarrinho = styled.div`
   align-items: center;
   @media screen and (max-width: 500px) {
     background-color: #004275;
+    width: 100vw;
   }
 `;
 
@@ -20,7 +21,8 @@ export const ContainerCarrinho = styled.div`
     width: 60vw;
   }
   @media screen and (max-width: 500px) {
-    width: 100vw;
+    width: 70vw;
+    margin-right: 30vw;
   }
 `;
 

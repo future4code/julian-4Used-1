@@ -4,7 +4,6 @@ import {
   HeaderContainer,
   BarraFiltroContainer,
   ProdutosContainer,
-  FooterContainer,
 } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -107,7 +106,11 @@ class ListaDeProdutos extends React.Component {
     return (
       <ListaProdutosContainer>
         <HeaderContainer>
-          <Header abreHome={this.props.abreHome} />
+          <Header
+            abreHome={this.props.abreHome}
+            abreCarrinho={this.props.abreCarrinho}
+            abreLogin={this.props.abreLogin}
+          />
         </HeaderContainer>
         <BarraFiltroContainer>
           <Filtro

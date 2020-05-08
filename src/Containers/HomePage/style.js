@@ -14,6 +14,7 @@ export const ProdutosContainer = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-bottom: 60px;
 `;
 
 export const FooterContainer = styled.div``;

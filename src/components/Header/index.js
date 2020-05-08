@@ -2,8 +2,6 @@ import React from "react";
 import {
   HeaderFlex,
   ContainerLogo,
-  InputBusca,
-  IconeCarrinho,
   BuscaInputContainer,
   IconesContainer,
   BotaoRetornar,

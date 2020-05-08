@@ -8,7 +8,10 @@ class PageProduto extends React.Component {
   render() {
     return (
       <PageProdutoContainer>
-        <Header abreHome={this.props.abreHome} />
+        <Header
+          abreHome={this.props.abreHome}
+          abreCarrinho={this.props.abreCarrinho}
+        />
 
         <ProdutoContainer>
           <Produto produto={this.props.produto} />

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import DeleteForeverRoundedIcon from "@material-ui/icons/DeleteForeverRounded";
+import Paper from "@material-ui/core/Paper";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled(Paper)`
   @media screen and (min-width: 500px) {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -20,6 +21,7 @@ export const CardContainer = styled.div`
     width: 100vw;
     background-color: #a5c1ce;
     padding-left: 50px;
+    border: #004275 4px solid;
   }
 `;
 

@@ -70,9 +70,7 @@ class HomePage extends React.Component {
           </BotaoVejaMais>
         </ContainerVejaMais>
         <ProdutosContainer>{primeiros6}</ProdutosContainer>
-        <FooterContainer>
-          <Footer />
-        </FooterContainer>
+        <Footer />
       </HomeContainer>
     );
   }
