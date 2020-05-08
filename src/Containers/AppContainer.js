@@ -9,7 +9,7 @@ import PageProduto from "./PageProduto";
 export class AppContainer extends Component {
   state = {
     paginaExibida: "homepage",
-    produto: '',
+    produto: "",
   };
 
   abreCarrinho = () => {
@@ -30,7 +30,7 @@ export class AppContainer extends Component {
 
   abreProduto = (produto) => {
     this.setState({ paginaExibida: "produto", produto: produto });
-  }; 
+  };
 
   render() {
     switch (this.state.paginaExibida) {
@@ -46,29 +46,33 @@ export class AppContainer extends Component {
         );
 
       case "cadastro":
-        return <Cadastro />;
+        return <Cadastro abreLogin={this.abreLogin} />;
 
       case "carrinho":
-        return <Carrinho abreHome={this.funcaoRetornar} />;
+        return (
+          <Carrinho abreHome={this.funcaoRetornar} abreLogin={this.abreLogin} />
+        );
 
       case "lista":
         return (
-          <ListaDeProdutos 
+          <ListaDeProdutos
             abreCarrinho={this.abreCarrinho}
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreProduto={this.abreProduto}
-          />)
-        ;
+          />
+        );
 
       case "login":
         return <Login abreHome={this.funcaoRetornar} />;
 
       case "produto":
         return (
-          <PageProduto 
+          <PageProduto
             abreHome={this.funcaoRetornar}
             produto={this.state.produto}
+            abreLogin={this.abreLogin}
+            abreCarrinho={this.abreCarrinho}
           />
         );
 
