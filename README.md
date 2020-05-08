@@ -1,6 +1,7 @@
 <h1 align="center"> 4User</h1>
 
-<h4 align="center"> E-Comerce de preciosidades com preços que cabem no orçamento</h4>
+<h4 align="center"> 
+Ganhar dinheiro com objetos que você não usa mais e encontrar o que você quer com preços ótimos nunca foi tão fácil </4> 
 
 #### Produtos
 - [x] Polaroid
@@ -19,5 +20,5 @@
 ##### NodeJS
 ##### Javascript
 ##### CSS
-<p align="justify"> This project was bootstrapped with[Create React App](https://github.com/facebook/create-react-app).</p>
+ This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).</p>
 
