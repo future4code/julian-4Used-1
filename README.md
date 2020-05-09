@@ -1,7 +1,7 @@
 <h1 align="center"> 4Used</h1>
 
 <h4 align="center"> 
-Ganhar dinheiro com o que você não usa mais e encontrar o que você quer com preços ótimos nunca foi tão fácil </4> 
+GANHAR COM O QUE VOCÊ NÃO USA MAIS E TER O QUE VOCÊ QUER ECONOMIZANDO MUITO É FACIL AQUI</4> 
 
 
 
