@@ -14,7 +14,10 @@ class PageProduto extends React.Component {
         />
 
         <ProdutoContainer>
-          <Produto produto={this.props.produto} />
+          <Produto
+            produto={this.props.produto}
+            adicionarProduto={this.props.adicionarProduto}
+          />
         </ProdutoContainer>
 
         <Footer />

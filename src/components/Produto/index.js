@@ -5,6 +5,7 @@ import {
   ImagemCard,
   DescriçãoProduto,
   Seletor,
+  BotaoComprar,
 } from "./style";
 
 class Produto extends React.Component {
@@ -16,7 +17,7 @@ class Produto extends React.Component {
     return (
       <ProdutoWrapper>
         <TituloProduto>
-          <h3>Nome do Produto</h3>
+          <h3>{this.props.produto.name}</h3>
           <ImagemCard src={this.props.produto.photos} alt="foto" />
         </TituloProduto>
 
@@ -32,6 +33,13 @@ class Produto extends React.Component {
             })}
           </Seletor>
         </DescriçãoProduto>
+        <BotaoComprar
+          variant="contained"
+          color="secondary"
+          onClick={this.props.adicionarProduto}
+        >
+          Comprar
+        </BotaoComprar>
       </ProdutoWrapper>
     );
   }
