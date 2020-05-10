@@ -58,6 +58,17 @@ export class AppContainer extends Component {
     })
   }
 
+  removerProduto = (id) => {
+    if(window.confirm("Tem certeza que deseja remover?")){
+      const novaListaCarrinho = this.state.carrinho.filter((produto) => {
+        return id !== produto.id
+      })
+      this.setState({
+        carrinho: novaListaCarrinho
+      })
+    }
+  }
+
   adicionarQtd = (id) => {
     const novaListaDeProdutos = this.state.carrinho.map((produto) => {
       if (id === produto.id && produto.qtd >= 1){
@@ -132,7 +143,7 @@ export class AppContainer extends Component {
             produtoCarrinho={this.state.carrinho}
             adicionarQtd={this.adicionarQtd}
             diminuirQtd={this.diminuirQtd}
-
+            removerProduto={this.removerProduto}
           />
         );
 

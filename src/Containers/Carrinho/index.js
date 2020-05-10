@@ -25,7 +25,8 @@ class Carrinho extends React.Component {
             return <CarrinhoWrapper>
                     <CardCarrinho produtoCarrinho={produto} 
                     adicionarQtd={() => this.props.adicionarQtd(produto.id, produto.qtd)}
-                    diminuirQtd = {() => this.props.diminuirQtd(produto.id, produto.qtd)}/>
+                    diminuirQtd = {() => this.props.diminuirQtd(produto.id, produto.qtd)}
+                    removerProduto = {() => this.props.removerProduto(produto.id)}/>
                   </CarrinhoWrapper>
           })}
           
