@@ -8,6 +8,7 @@ export const ProdutoItem = styled(Paper)`
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
+  padding: 20px;
   @media screen and (max-width: 500px) {
     width: 100%;
     height: 100%;
@@ -35,6 +36,7 @@ export const InsigniaPreco = styled(Badge)`
 `;
 
 export const BotaoComprar = styled(Button)`
+  margin-top: 10px;
   width: 50%;
   align-self: center;
 `;
