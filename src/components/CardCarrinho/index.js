@@ -33,7 +33,7 @@ class CardCarrinho extends React.Component {
                 <AddIcon/>
               </Fab>
             </p>
-            <BotaoExcluir></BotaoExcluir>
+            <BotaoExcluir onClick={this.props.removerProduto}></BotaoExcluir>
         </ContainerDetalhes>
       </CardContainer>
     );
