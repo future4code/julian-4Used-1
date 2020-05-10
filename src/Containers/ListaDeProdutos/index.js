@@ -18,7 +18,7 @@ class ListaDeProdutos extends React.Component {
     inputValorMinimo: "",
     inputCategoria: "",
     inputNome: "",
-    inputOrdem: '',
+    inputOrdem: "",
   };
 
   componentDidMount = () => {
@@ -53,7 +53,7 @@ class ListaDeProdutos extends React.Component {
   };
 
   ordenaLista = (event) => {
-    this.setState({ inputOrdem: event.target.value })
+    this.setState({ inputOrdem: event.target.value });
     let novaLista = this.state.listaProdutos;
     if (event.target.value === "Nome") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
@@ -65,11 +65,19 @@ class ListaDeProdutos extends React.Component {
       });
     } else if (event.target.value === "Menor Preço") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
-        return Number(a.price) < Number(b.price) ? -1 : Number(a.price) > Number(b.price) ? 1 : 0;
+        return Number(a.price) < Number(b.price)
+          ? -1
+          : Number(a.price) > Number(b.price)
+          ? 1
+          : 0;
       });
     } else if (event.target.value === "Maior Preço") {
       novaLista = [].concat(this.state.listaProdutos).sort((a, b) => {
-        return Number(a.price) > Number(b.price) ? -1 : Number(a.price) < Number(b.price) ? 1 : 0;
+        return Number(a.price) > Number(b.price)
+          ? -1
+          : Number(a.price) < Number(b.price)
+          ? 1
+          : 0;
       });
     }
     this.setState({ listaProdutos: novaLista });

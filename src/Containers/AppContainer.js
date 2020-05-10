@@ -173,23 +173,12 @@ export class AppContainer extends Component {
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreCarrinho={this.abreCarrinho}
-            abreAnunciar={this.abreAnunciar}
+            adicionarProduto={this.adicionarProduto}
           />
         );
 
       default:
         return <HomePage />;
     }
-
-    // return (
-    //   <div>
-    //     <HomePage></HomePage>
-    //     <Cadastro></Cadastro>
-    //     <Carrinho></Carrinho>
-    //     <ListaDeProdutos></ListaDeProdutos>
-    //     <Login></Login>
-    //     <PageProduto></PageProduto>
-    //   </div>
-    // )
   }
 }

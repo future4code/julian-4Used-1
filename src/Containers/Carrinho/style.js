@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
 
 export const CorpoCarrinho = styled.div`
   display: flex;
@@ -31,7 +32,7 @@ export const ContainerCarrinho = styled.div`
 
 export const CarrinhoWrapper = styled.div`
   margin-top: 20px;
-`
+`;
 
 export const ContainerBottom = styled.div`
   display: flex;
@@ -39,12 +40,17 @@ export const ContainerBottom = styled.div`
 `;
 
 export const BotaoFinalizar = styled(Button)`
-  width: 10vw;
+  width: 12vw;
   border-radius: 20px;
   margin-right: 5vw;
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   @media screen and (max-width: 500px) {
     width: 50vw;
   }
 `;
+
+export const BoxValorTotal = styled(Paper)``;
