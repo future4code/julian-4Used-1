@@ -12,15 +12,15 @@ export class AppContainer extends Component {
     produto: "",
     carrinho: [],
     categorias: [
-      'Decoração',
-      'Vestuário',
-      'Eletrônicos',
-      'Mobília',
-      'Utilitários',
-      'Cozinha',
-      'Instrumentos Musicais',
-      'Outros'
-    ]
+      "Decoração",
+      "Vestuário",
+      "Eletrônicos",
+      "Mobília",
+      "Utilitários",
+      "Cozinha",
+      "Instrumentos Musicais",
+      "Outros",
+    ],
   };
 
   abreCarrinho = () => {
@@ -48,62 +48,61 @@ export class AppContainer extends Component {
   };
 
   adicionarProduto = (produto) => {
-
     produto.qtd = 1;
 
-    const novaListaCarrinho = [...this.state.carrinho, produto]
+    const novaListaCarrinho = [...this.state.carrinho, produto];
 
     this.setState({
-      carrinho: novaListaCarrinho
-    })
-  }
+      carrinho: novaListaCarrinho,
+    });
+  };
 
   removerProduto = (id) => {
-    if(window.confirm("Tem certeza que deseja remover?")){
+    if (window.confirm("Tem certeza que deseja remover?")) {
       const novaListaCarrinho = this.state.carrinho.filter((produto) => {
-        return id !== produto.id
-      })
+        return id !== produto.id;
+      });
       this.setState({
-        carrinho: novaListaCarrinho
-      })
+        carrinho: novaListaCarrinho,
+      });
     }
-  }
+  };
 
   adicionarQtd = (id) => {
     const novaListaDeProdutos = this.state.carrinho.map((produto) => {
-      if (id === produto.id && produto.qtd >= 1){
+      if (id === produto.id && produto.qtd >= 1) {
         const alteracao = {
           ...produto,
-          qtd: produto.qtd + 1
-        }
-        return alteracao
-      }else{
+          qtd: produto.qtd + 1,
+        };
+        return alteracao;
+      } else {
         return produto;
       }
-    })
+    });
 
     this.setState({
-      carrinho: novaListaDeProdutos
-    })
-  }
+      carrinho: novaListaDeProdutos,
+    });
+  };
 
   diminuirQtd = (id) => {
     const novaListaDeProdutos = this.state.carrinho.map((produto) => {
-      if (id === produto.id && produto.qtd > 1){
+      if (id === produto.id && produto.qtd > 1) {
         const alteracao = {
           ...produto,
-          qtd: produto.qtd - 1
-        }
-        return alteracao
-      }else{
+          qtd: produto.qtd - 1,
+        };
+        return alteracao;
+      } else {
         return produto;
       }
-    })
+    });
 
     this.setState({
-      carrinho: novaListaDeProdutos
-    })
-  }
+      carrinho: novaListaDeProdutos,
+    });
+  };
 
   render() {
     switch (this.state.paginaExibida) {
@@ -117,7 +116,6 @@ export class AppContainer extends Component {
             abreProduto={this.abreProduto}
             abreAnunciar={this.abreAnunciar}
             adicionarProduto={this.adicionarProduto}
-
           />
         );
 
@@ -135,12 +133,11 @@ export class AppContainer extends Component {
 
       case "carrinho":
         return (
-          <Carrinho 
+          <Carrinho
             produtoCarrinho={this.state.carrinho}
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreAnunciar={this.abreAnunciar}
-            produtoCarrinho={this.state.carrinho}
             adicionarQtd={this.adicionarQtd}
             diminuirQtd={this.diminuirQtd}
             removerProduto={this.removerProduto}
