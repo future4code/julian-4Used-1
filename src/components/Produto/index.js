@@ -36,7 +36,7 @@ class Produto extends React.Component {
         <BotaoComprar
           variant="contained"
           color="secondary"
-          onClick={this.props.adicionarProduto}
+          onClick={() => this.props.adicionarProduto(this.props.produto)}
         >
           Comprar
         </BotaoComprar>

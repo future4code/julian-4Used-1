@@ -5,11 +5,7 @@ export const ListaProdutosContainer = styled.div``;
 export const HeaderContainer = styled.div``;
 
 export const BarraFiltroContainer = styled.div`
-  height: 200px;
   background-color: #a58375;
-  @media screen and (max-width: 500px) {
-    height: 300px;
-  }
 `;
 export const ProdutosContainer = styled.div`
   width: 90%;

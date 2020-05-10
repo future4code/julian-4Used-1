@@ -11,6 +11,16 @@ export class AppContainer extends Component {
     paginaExibida: "homepage",
     produto: "",
     carrinho: [],
+    categorias: [
+      "Decoração",
+      "Vestuário",
+      "Eletrônicos",
+      "Mobília",
+      "Utilitários",
+      "Cozinha",
+      "Instrumentos Musicais",
+      "Outros",
+    ],
   };
 
   abreCarrinho = () => {
@@ -38,10 +48,59 @@ export class AppContainer extends Component {
   };
 
   adicionarProduto = (produto) => {
+    produto.qtd = 1;
+
     const novaListaCarrinho = [...this.state.carrinho, produto];
 
     this.setState({
       carrinho: novaListaCarrinho,
+    });
+  };
+
+  removerProduto = (id) => {
+    if (window.confirm("Tem certeza que deseja remover?")) {
+      const novaListaCarrinho = this.state.carrinho.filter((produto) => {
+        return id !== produto.id;
+      });
+      this.setState({
+        carrinho: novaListaCarrinho,
+      });
+    }
+  };
+
+  adicionarQtd = (id) => {
+    const novaListaDeProdutos = this.state.carrinho.map((produto) => {
+      if (id === produto.id && produto.qtd >= 1) {
+        const alteracao = {
+          ...produto,
+          qtd: produto.qtd + 1,
+        };
+        return alteracao;
+      } else {
+        return produto;
+      }
+    });
+
+    this.setState({
+      carrinho: novaListaDeProdutos,
+    });
+  };
+
+  diminuirQtd = (id) => {
+    const novaListaDeProdutos = this.state.carrinho.map((produto) => {
+      if (id === produto.id && produto.qtd > 1) {
+        const alteracao = {
+          ...produto,
+          qtd: produto.qtd - 1,
+        };
+        return alteracao;
+      } else {
+        return produto;
+      }
+    });
+
+    this.setState({
+      carrinho: novaListaDeProdutos,
     });
   };
 
@@ -63,30 +122,37 @@ export class AppContainer extends Component {
       case "cadastro":
         return (
           <Cadastro
+            categorias={this.state.categorias}
             abreCarrinho={this.abreCarrinho}
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreProduto={this.abreProduto}
+            abreAnunciar={this.abreAnunciar}
           />
         );
 
       case "carrinho":
         return (
           <Carrinho
+            produtoCarrinho={this.state.carrinho}
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreAnunciar={this.abreAnunciar}
-            produtoCarrinho={this.state.carrinho}
+            adicionarQtd={this.adicionarQtd}
+            diminuirQtd={this.diminuirQtd}
+            removerProduto={this.removerProduto}
           />
         );
 
       case "lista":
         return (
           <ListaDeProdutos
+            categorias={this.state.categorias}
             abreCarrinho={this.abreCarrinho}
             abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreProduto={this.abreProduto}
+            abreAnunciar={this.abreAnunciar}
           />
         );
 
@@ -95,14 +161,16 @@ export class AppContainer extends Component {
           <Login
             abreHome={this.funcaoRetornar}
             abreAnunciar={this.abreAnunciar}
+            abreLogin={this.abreLogin}
+            abreCarrinho={this.abreCarrinho}
           />
         );
 
       case "produto":
         return (
           <PageProduto
-            abreHome={this.funcaoRetornar}
             produto={this.state.produto}
+            abreHome={this.funcaoRetornar}
             abreLogin={this.abreLogin}
             abreCarrinho={this.abreCarrinho}
             adicionarProduto={this.adicionarProduto}
@@ -112,16 +180,5 @@ export class AppContainer extends Component {
       default:
         return <HomePage />;
     }
-
-    // return (
-    //   <div>
-    //     <HomePage></HomePage>
-    //     <Cadastro></Cadastro>
-    //     <Carrinho></Carrinho>
-    //     <ListaDeProdutos></ListaDeProdutos>
-    //     <Login></Login>
-    //     <PageProduto></PageProduto>
-    //   </div>
-    // )
   }
 }

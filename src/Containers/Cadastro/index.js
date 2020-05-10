@@ -6,10 +6,14 @@ import {
   ImagemContainer,
   CadastroProdutoFoto,
   BotaoCadastrar,
+  InputContainer,
+  SelectContainer,
+  FormControle,
+  SelectLabel,
+  Option,
 } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 
 class Cadastro extends React.Component {
@@ -101,44 +105,73 @@ class Cadastro extends React.Component {
           abreCarrinho={this.props.abreCarrinho}
           abreHome={this.props.abreHome}
           abreLogin={this.props.abreLogin}
+          abreAnunciar={this.props.abreAnunciar}
         />
         <CadastroBodyContainer>
           <FormContainer>
-            <TextField
+            <InputContainer
               label="Nome"
               onChange={this.onChangeInputName}
               value={this.state.inputNome}
             />
-            <TextField
+            <InputContainer
               label="Descrição"
               onChange={this.onChangeInputDescricao}
               value={this.state.inputDescricao}
             />
-            <TextField
+            <InputContainer
               label="Preço"
               onChange={this.onChangeInputPreco}
               value={this.state.inputPreco}
             />
-            <TextField
-              label="Método de Pagamento"
-              onChange={this.onChangeInputPagamento}
-              value={this.state.inputPagamento}
-            />
-            <TextField
-              label="Categoria"
-              onChange={this.onChangeInputCatego}
-              value={this.state.inputCategoria}
-            />
-            <TextField
+            <FormControle>
+              <SelectLabel>Método de Pagamento</SelectLabel>
+              <SelectContainer
+                onChange={this.onChangeInputPagamento}
+                value={this.state.inputPagamento}
+              >
+                <Option value={'Cartão'}>Cartão</Option>
+                <Option value={'Boleto'}>Boleto</Option>
+                <Option value={'Dinheiro'}>Dinheiro</Option>
+                <Option value={'PayPal'}>PayPal</Option>
+              </SelectContainer>
+            </FormControle>
+            <FormControle>
+              <SelectLabel>Categoria</SelectLabel>
+              <SelectContainer
+                onChange={this.onChangeInputCatego}
+                value={this.state.inputCategoria}
+              >
+                {this.props.categorias.map(categoria => {
+                  return <Option value={categoria}>{categoria}</Option>
+                })}
+              </SelectContainer>
+            </FormControle>
+            <InputContainer
               label="Fotos"
               onChange={this.onChangeInputFoto}
               value={this.state.inputFoto}
             />
-            <TextField
-              label="Número de parcelas"
-              onChange={this.onChangeInputParcelas}
-              value={this.state.inputParcelas}
-            />
+            <FormControle>
+              <SelectLabel>Número de parcelas</SelectLabel>
+              <SelectContainer
+                onChange={this.onChangeInputParcelas}
+                value={this.state.inputParcelas}
+              >
+                <Option value={1}>1</Option>
+                <Option value={2}>2</Option>
+                <Option value={3}>3</Option>
+                <Option value={4}>4</Option>
+                <Option value={5}>5</Option>
+                <Option value={6}>6</Option>
+                <Option value={7}>7</Option>
+                <Option value={8}>8</Option>
+                <Option value={9}>9</Option>
+                <Option value={10}>10</Option>
+                <Option value={11}>11</Option>
+                <Option value={12}>12</Option>
+              </SelectContainer>
+            </FormControle>
             <BotaoCadastrar
               variant="contained"
               color="secondary"
