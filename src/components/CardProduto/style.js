@@ -8,7 +8,7 @@ export const ProdutoItem = styled(Paper)`
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
-  padding: 20px;
+  padding: 10px;
   @media screen and (max-width: 500px) {
     width: 100%;
     height: 100%;
