@@ -143,6 +143,7 @@ class ListaDeProdutos extends React.Component {
                 key={produto.id}
                 produto={produto}
                 abreProduto={this.props.abreProduto}
+                abreLista={this.props.abreLista}
               />
             );
           })}

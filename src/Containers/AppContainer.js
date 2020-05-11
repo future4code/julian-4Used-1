@@ -153,6 +153,7 @@ export class AppContainer extends Component {
             abreLogin={this.abreLogin}
             abreProduto={this.abreProduto}
             abreAnunciar={this.abreAnunciar}
+            abreLista={this.abreLista}
           />
         );
 

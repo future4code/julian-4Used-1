@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
+import IconeLixo from "@material-ui/icons/DeleteRounded";
 
 export const ProdutoItem = styled(Paper)`
   margin-top: 10px;
@@ -10,8 +11,7 @@ export const ProdutoItem = styled(Paper)`
 `;
 
 export const TextoCardProduto = styled.p`
-  font-size: 0.7em;
-  align-self: flex-end;
+  font-size: 1.5em;
 `;
 
 export const NomeProduto = styled.h2`
@@ -21,4 +21,14 @@ export const NomeProduto = styled.h2`
 export const ImagemCard = styled.img`
   width: 150px;
   margin: auto;
+`;
+
+export const BotaoExcluirProduto = styled(IconeLixo)`
+  cursor: pointer;
+  margin: auto;
+`;
+
+export const BoxInferior = styled.div`
+  display: flex;
+  flex-flow: row-reverse wrap;
 `;
